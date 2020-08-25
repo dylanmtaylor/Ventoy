@@ -2,8 +2,8 @@
 
 rm -f vtoytool/00/*
 
-/opt/diet64/bin/diet -Os gcc -D_FILE_OFFSET_BITS=64  *.c BabyISO/*.c -IBabyISO -Wall -DBUILD_VTOY_TOOL -DUSE_DIET_C  -o  vtoytool_64
-/opt/diet32/bin/diet -Os gcc -D_FILE_OFFSET_BITS=64 -m32  *.c BabyISO/*.c -IBabyISO -Wall -DBUILD_VTOY_TOOL -DUSE_DIET_C  -o  vtoytool_32
+/opt/diet64/bin/diet -Os gcc -D_FILE_OFFSET_BITS=64  *.c BabyISO/*.c -IBabyISO -Wall -DBUILD_VTOY_TOOL -DUSE_DIET_C  -o  vtoytool_64 || echo "Building vtoytool_64 failed"
+/opt/diet32/bin/diet -Os gcc -D_FILE_OFFSET_BITS=64 -m32  *.c BabyISO/*.c -IBabyISO -Wall -DBUILD_VTOY_TOOL -DUSE_DIET_C  -o  vtoytool_32 || echo "Building vtoytool_32 failed"
 
 #gcc -D_FILE_OFFSET_BITS=64 -static -Wall -DBUILD_VTOY_TOOL  *.c BabyISO/*.c -IBabyISO  -o  vtoytool_64
 #gcc -D_FILE_OFFSET_BITS=64  -Wall -DBUILD_VTOY_TOOL -m32  *.c BabyISO/*.c -IBabyISO  -o  vtoytool_32
