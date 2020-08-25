@@ -10,11 +10,10 @@ rm -f vtoytool/00/*
 
 if [ -e vtoytool_64 ] && [ -e vtoytool_32 ]; then
     echo -e '\n############### SUCCESS ###############\n'
-    
-    mv vtoytool_64 vtoytool/00/
-    mv vtoytool_32 vtoytool/00/
+    mv vtoytool_64 vtoytool_32 vtoytool/00/
 else
     echo -e '\n############### FAILED ################\n'
+    ls -lah
     exit 1
 fi
 
